@@ -4,22 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
-
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.vastinc.thecatexperience.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
-
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.vastinc.thecatexperience.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
+        android:id="@+id/navigation_breeds"
+        android:name="com.vastinc.thecatexperience.ui.breeds.BreedsFragment"
+        android:label="@string/title_breeds"
+        tools:layout="@layout/fragment_breeds" />
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.vastinc.thecatexperience.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_categories"
+        android:name="com.vastinc.thecatexperience.ui.categories.CategoriesFragment"
+        android:label="@string/title_categories"
+        tools:layout="@layout/fragment_categories" />
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.vastinc.thecatexperience.ui.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/search_fragment" />
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.vastinc.thecatexperience.ui.more.MoreFragment"
+        android:label="@string/title_more"
+        tools:layout="@layout/more_fragment" />
 </navigation>

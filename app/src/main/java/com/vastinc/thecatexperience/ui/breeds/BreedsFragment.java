@@ -1,4 +1,4 @@
-package com.vastinc.thecatexperience.ui.dashboard;
+package com.vastinc.thecatexperience.ui.breeds;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,15 +14,15 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.vastinc.thecatexperience.R;
 
-public class DashboardFragment extends Fragment {
+public class BreedsFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private BreedsViewModel dashboardViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+                new ViewModelProvider(this).get(BreedsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_breeds, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
         dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
