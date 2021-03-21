@@ -1,4 +1,4 @@
-package com.vastinc.thecatexperience.ui.search;
+package com.vastinc.thecatexperience.ui.fragment.search;
 
 import androidx.lifecycle.ViewModelProvider;
 
