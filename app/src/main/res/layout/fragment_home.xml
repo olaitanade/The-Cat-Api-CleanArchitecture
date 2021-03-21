@@ -4,19 +4,229 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="10dp"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/text_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:text="@string/app_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/app_icon"
+                app:layout_constraintStart_toEndOf="@id/text_home"
+                app:layout_constraintTop_toTopOf="@id/text_home"
+                android:src="@drawable/ic_witchcat"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+
+            <View
+                android:id="@+id/view_title_horizontal_line"
+                app:layout_constraintTop_toBottomOf="@id/text_home"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_height="2dp"
+                android:background="#c0c0c0"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/story_layout"
+                android:padding="20dp"
+                app:layout_constraintTop_toBottomOf="@id/view_title_horizontal_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_margin="20dp"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/coolcat"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="#111111"/>
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    app:layout_constraintTop_toTopOf="@id/profile_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="50dp"
+                    android:text="@string/date_now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_openstory"
+                    app:layout_constraintStart_toStartOf="@id/tv_date"
+                    app:layout_constraintEnd_toEndOf="@id/tv_date"
+                    app:layout_constraintTop_toBottomOf="@id/tv_date"
+                    android:text="@string/openstory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view_story_horizontal_line"
+                app:layout_constraintTop_toBottomOf="@id/story_layout"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_height="2dp"
+                android:background="#c0c0c0"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_catoftheday"
+                app:cardElevation="5dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="15dp"
+                app:layout_constraintTop_toBottomOf="@id/view_story_horizontal_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="4dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/img_catoftheday"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_witchcat"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"/>
+                    <TextView
+                        android:id="@+id/tv_catoftheday"
+                        app:layout_constraintStart_toEndOf="@id/img_catoftheday"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/catoftheday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/tv_catofthedayname"
+                        app:layout_constraintStart_toEndOf="@id/img_catoftheday"
+                        app:layout_constraintTop_toBottomOf="@id/tv_catoftheday"
+                        android:text="@string/catoftheday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tv_catofthedaydesc"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_catofthedayname"
+                        android:text="@string/catofthedaydesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:id="@+id/img_share"
+                        app:layout_constraintTop_toBottomOf="@id/tv_catofthedaydesc"
+                        app:layout_constraintEnd_toStartOf="@id/img_favourite"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:src="@drawable/ic_baseline_share_24"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"/>
+
+                    <ImageView
+                        android:id="@+id/img_favourite"
+                        app:layout_constraintTop_toBottomOf="@id/tv_catofthedaydesc"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:src="@drawable/ic_baseline_favorite_border_24"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_catofthedayimg"
+                app:cardElevation="5dp"
+                android:layout_marginHorizontal="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginVertical="15dp"
+                app:layout_constraintTop_toBottomOf="@id/card_view_catoftheday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="4dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/img_catoftheday1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_witchcat"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"/>
+                    <TextView
+                        android:id="@+id/tv_catoftheday1"
+                        app:layout_constraintStart_toEndOf="@id/img_catoftheday1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/catoftheday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/tv_catofthedayname1"
+                        app:layout_constraintStart_toEndOf="@id/img_catoftheday1"
+                        app:layout_constraintTop_toBottomOf="@id/tv_catoftheday1"
+                        android:text="@string/catoftheday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_catofthedayname1"
+                        android:id="@+id/img_catofthedayfull"
+                        android:src="@drawable/coolcat"
+                        android:layout_width="match_parent"
+                        android:layout_height="500dp"/>
+
+                    <ImageView
+                        android:id="@+id/img_share1"
+                        app:layout_constraintTop_toBottomOf="@id/img_catofthedayfull"
+                        app:layout_constraintEnd_toStartOf="@id/img_favourite1"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:src="@drawable/ic_baseline_share_24"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"/>
+
+                    <ImageView
+                        android:id="@+id/img_favourite1"
+                        app:layout_constraintTop_toBottomOf="@id/img_catofthedayfull"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:src="@drawable/ic_baseline_favorite_border_24"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

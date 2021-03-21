@@ -5,4 +5,8 @@
     <string name="title_categories">Categories</string>
     <string name="title_search">Search</string>
     <string name="title_more">More</string>
+    <string name="openstory">Open Story</string>
+    <string name="date_now">Tuesday, 2 Feb</string>
+    <string name="catoftheday">Cat of the day</string>
+    <string name="catofthedaydesc">Cat of the day description Cat of the day description Cat of the day description Cat of the day description Cat of the day description Cat of the day description Cat of the day description Cat of the day description Cat of the day description </string>
 </resources>
