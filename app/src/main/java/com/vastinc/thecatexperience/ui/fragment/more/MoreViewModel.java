@@ -1,4 +1,4 @@
-package com.vastinc.thecatexperience.ui.more;
+package com.vastinc.thecatexperience.ui.fragment.more;
 
 import androidx.lifecycle.ViewModel;
 

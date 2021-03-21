@@ -1,8 +1,9 @@
-package com.vastinc.thecatexperience;
+package com.vastinc.thecatexperience.ui.activity;
 
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.vastinc.thecatexperience.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;

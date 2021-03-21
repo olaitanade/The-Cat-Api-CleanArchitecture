@@ -1,4 +1,4 @@
-package com.vastinc.thecatexperience.ui.categories;
+package com.vastinc.thecatexperience.ui.fragment.categories;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

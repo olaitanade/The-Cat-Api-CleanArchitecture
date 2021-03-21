@@ -1,4 +1,4 @@
-package com.vastinc.thecatexperience.ui.categories;
+package com.vastinc.thecatexperience.ui.fragment.breeds;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.vastinc.thecatexperience.R;
 
-public class CategoriesFragment extends Fragment {
+public class BreedsFragment extends Fragment {
 
-    private CategoriesViewModel notificationsViewModel;
+    private BreedsViewModel dashboardViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                new ViewModelProvider(this).get(CategoriesViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_categories, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        dashboardViewModel =
+                new ViewModelProvider(this).get(BreedsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_breeds, container, false);
+        final TextView textView = root.findViewById(R.id.text_dashboard);
+        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

@@ -1,16 +1,16 @@
-package com.vastinc.thecatexperience.ui.home;
+package com.vastinc.thecatexperience.ui.fragment.breeds;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class BreedsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public BreedsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("This is dashboard fragment");
     }
 
     public LiveData<String> getText() {
